@@ -1,0 +1,33 @@
+
+texture Nano;
+
+sampler SamplerNano = sampler_state
+{
+Texture = <Nano>;
+AddressU = WRAP;
+AddressV = WRAP;
+AddressW = WRAP;
+MipFilter = LINEAR;
+MinFilter = LINEAR;
+MagFilter = LINEAR;
+};
+
+struct VS_OUTPUT {
+float4 pos : POSITION;
+float4 col : COLOR;
+};
+
+struct VS_INPUT {
+float4 pos : POSITION;
+float2 uv : TEXCOORD0;
+};
+
+VS_OUTPUT VS_Main(VS_INPUT in)
+{
+VS_OUTPUT out = (VS_OUTPUT)0;
+float4 Nano = tex2D(SamplerNano, in.uv);
+out.col = Nano.rgba;
+out.pos = in.pos;
+
+return out;
+}

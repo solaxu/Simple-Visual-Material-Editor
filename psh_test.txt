@@ -1,0 +1,32 @@
+
+texture NanoTex;
+
+sampler SamplerNano = sampler_state
+{
+Texture = NanoTex;
+AddressU = WRAP;
+AddressV = WRAP;
+AddressW = WRAP;
+MipFilter = NONE;
+MinFilter = NONE;
+MagFilter = NONE;
+};
+
+struct PS_OUTPUT {
+float4 col : COLOR;
+};
+
+struct PS_INPUT {
+float4 pos : POSITION;
+float2 tex : TEXCOORD0;
+};
+
+PS_OUTPUT PS_Main(PS_INPUT In) : COLOR
+{
+PS_OUTPUT Out = (PS_OUTPUT)0;
+
+float4 Nano = tex2D(SamplerNano, In.tex);
+Out.col = Nano.rgba;
+
+return Out;
+}

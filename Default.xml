@@ -1,0 +1,10 @@
+<Material>
+    <Textures>
+        <Nano>E:\资料\MyProject\ShaderEditor\ColorMap.dds</Nano>
+        <AnotherColor>E:\资料\MyProject\ShaderEditor\ColorMap.jpg</AnotherColor>
+    </Textures>
+    <Matrix>
+        <WVPMat />
+    </Matrix>
+    <Effect>&#x0A;float4x4 WVPMat;&#x0A;&#x0A;struct VS_OUTPUT {&#x0A;float4 pos : POSITION;&#x0A;float2 tex : TEXCOORD0;&#x0A;};&#x0A;&#x0A;struct VS_INPUT {&#x0A;float4 pos : POSITION0;&#x0A;float2 tex : TEXCOORD0;&#x0A;};&#x0A;&#x0A;VS_OUTPUT VS_Main(VS_INPUT In)&#x0A;{&#x0A;VS_OUTPUT Out = (VS_OUTPUT)0;&#x0A;&#x0A;float4 clipPos = mul(WVPMat,In.pos);&#x0A;Out.pos = clipPos;&#x0A;Out.tex = In.tex;&#x0A;&#x0A;return Out;&#x0A;}&#x0A;&#x0A;&#x0A;texture NanoTex;&#x0A;&#x0A;sampler SamplerNano = sampler_state&#x0A;{&#x0A;Texture = NanoTex;&#x0A;AddressU = WRAP;&#x0A;AddressV = WRAP;&#x0A;AddressW = WRAP;&#x0A;MipFilter = NONE;&#x0A;MinFilter = NONE;&#x0A;MagFilter = NONE;&#x0A;};&#x0A;texture AnotherColorTex;&#x0A;&#x0A;sampler SamplerAnotherColor = sampler_state&#x0A;{&#x0A;Texture = AnotherColorTex;&#x0A;AddressU = WRAP;&#x0A;AddressV = WRAP;&#x0A;AddressW = WRAP;&#x0A;MipFilter = NONE;&#x0A;MinFilter = NONE;&#x0A;MagFilter = NONE;&#x0A;};&#x0A;&#x0A;struct PS_OUTPUT {&#x0A;float4 col : COLOR;&#x0A;};&#x0A;&#x0A;struct PS_INPUT {&#x0A;float4 pos : POSITION;&#x0A;float2 tex : TEXCOORD0;&#x0A;};&#x0A;&#x0A;PS_OUTPUT PS_Main(PS_INPUT In) : COLOR&#x0A;{&#x0A;PS_OUTPUT Out = (PS_OUTPUT)0;&#x0A;&#x0A;float4 Nano = tex2D(SamplerNano, In.tex);&#x0A;Out.col = Nano.rgba;&#x0A;&#x0A;return Out;&#x0A;}&#x0A;&#x0A;technique DefaultTech &#x0A;{&#x0A;pass P0&#x0A;{&#x0A;AlphaBlendEnable = True;&#x0A;DestBlend = InvSrcAlpha;&#x0A;FillMode = WireFrame;&#x0A;ZEnable = True;&#x0A; VertexShader = compile vs_2_0 VS_Main();&#x0A; PixelShader = compile ps_2_0 PS_Main();&#x0A;}&#x0A;}&#x0A;</Effect>
+</Material>

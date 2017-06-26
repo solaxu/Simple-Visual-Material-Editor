@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+-<Material>
+
+
+-<Textures>
+
+<Nano>F:\Picture\3D\SoulEater03.jpg</Nano>
+
+</Textures>
+
+
+-<Matrix>
+
+<WVPMat/>
+
+</Matrix>
+
+<Effect> float4x4 WVPMat; struct VS_OUTPUT { float4 pos : POSITION; float2 tex : TEXCOORD0; }; struct VS_INPUT { float4 pos : POSITION; float2 tex : TEXCOORD0; }; VS_OUTPUT VS_Main(VS_INPUT in) { VS_OUTPUT out = (VS_OUTPUT)0; float4 clipPos = mul(in.pos,WVPMat); out.pos = clipPos; out.tex = in.tex; return out; } texture Nano; sampler SamplerNano = sampler_state { Texture = <Nano>; AddressU = WRAP; AddressV = WRAP; AddressW = WRAP; MipFilter = NONE; MinFilter = NONE; MagFilter = NONE; }; struct PS_OUTPUT { float4 col : COLOR; }; struct PS_INPUT { float4 pos : POSITION; float2 tex : TEXCOORD0; }; PS_OUTPUT PS_Main(PS_INPUT in) : COLOR { PS_OUTPUT out = (PS_OUTPUT)0; float4 Nano = tex2D(SamplerNano, in.tex); out.col = Nano.rgba; return out; } technique DefaultTech { pass P0 { FillMode = Soild; ShadeMode = Phong; VertexShader = compile vs_2_0 VS_Main(); PixelShader = compile ps_2_0 PS_Main(); } } </Effect>
+
+</Material>

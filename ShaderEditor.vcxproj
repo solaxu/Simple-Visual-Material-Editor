@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FB9307CF-2596-4FF6-989E-EBEB23A7FDAB}</ProjectGuid>
+    <RootNamespace>ShaderEditor</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CodeNodeDlg.h" />
+    <ClInclude Include="D3D9DockWnd.h" />
+    <ClInclude Include="D3DView.h" />
+    <ClInclude Include="FloatLabelDlg.h" />
+    <ClInclude Include="HLSLLexer.h" />
+    <ClInclude Include="InoutputDlg.h" />
+    <ClInclude Include="LabelEditDlg.h" />
+    <ClInclude Include="LexState.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="PropertyDockWnd.h" />
+    <ClInclude Include="RenderSatateDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceMgrWnd.h" />
+    <ClInclude Include="SamplerTexDlg.h" />
+    <ClInclude Include="ShaderEditor.h" />
+    <ClInclude Include="ShaderEditorDoc.h" />
+    <ClInclude Include="ShaderEditorView.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="ToolBoxWnd.h" />
+    <ClInclude Include="UI.h" />
+    <ClInclude Include="UIMaterailNodeLog10.h" />
+    <ClInclude Include="UIMaterialNodeAbs.h" />
+    <ClInclude Include="UIMaterialNodeAdd.h" />
+    <ClInclude Include="UIMaterialNodeAppend.h" />
+    <ClInclude Include="UIMaterialNodeArccos.h" />
+    <ClInclude Include="UIMaterialNodeArcsin.h" />
+    <ClInclude Include="UIMaterialNodeArctan.h" />
+    <ClInclude Include="UIMaterialNodeCeil.h" />
+    <ClInclude Include="UIMaterialNodeClamp.h" />
+    <ClInclude Include="UIMaterialNodeCode.h" />
+    <ClInclude Include="UIMaterialNodeCos.h" />
+    <ClInclude Include="UIMaterialNodeCross.h" />
+    <ClInclude Include="UIMaterialNodeDdx.h" />
+    <ClInclude Include="UIMaterialNodeDdy.h" />
+    <ClInclude Include="UIMaterialNodeDegree.h" />
+    <ClInclude Include="UIMaterialNodeDistance.h" />
+    <ClInclude Include="UIMaterialNodeDiv.h" />
+    <ClInclude Include="UIMaterialNodeDot.h" />
+    <ClInclude Include="UIMaterialNodeExp2.h" />
+    <ClInclude Include="UIMaterialNodeExpE.h" />
+    <ClInclude Include="UIMaterialNodeFloat.h" />
+    <ClInclude Include="UIMaterialNodeFloat2.h" />
+    <ClInclude Include="UIMaterialNodeFloat3.h" />
+    <ClInclude Include="UIMaterialNodeFloat4.h" />
+    <ClInclude Include="UIMaterialNodeFmod.h" />
+    <ClInclude Include="UIMaterialNodeInput.h" />
+    <ClInclude Include="UIMaterialNodeInvProjMatrix.h" />
+    <ClInclude Include="UIMaterialNodeInvView.h" />
+    <ClInclude Include="UIMaterialNodeInvWorldMatrix.h" />
+    <ClInclude Include="UIMaterialNodeInvWOrldViewMatrix.h" />
+    <ClInclude Include="UIMaterialNodeInvWorldViewProjMatrix.h" />
+    <ClInclude Include="UIMaterialNodeLength.h" />
+    <ClInclude Include="UIMaterialNodeLerp.h" />
+    <ClInclude Include="UIMaterialNodeLit.h" />
+    <ClInclude Include="UIMaterialNodeLog2.h" />
+    <ClInclude Include="UIMaterialNodeLogE.h" />
+    <ClInclude Include="UIMaterialNodeMatTranspose.h" />
+    <ClInclude Include="UIMaterialNodeMax.h" />
+    <ClInclude Include="UIMaterialNodeMin.h" />
+    <ClInclude Include="UIMaterialNodeMul.h" />
+    <ClInclude Include="UIMaterialNodeNoise.h" />
+    <ClInclude Include="UIMaterialNodeNormalize.h" />
+    <ClInclude Include="UIMaterialNodeOutput.h" />
+    <ClInclude Include="UIMaterialNodePow.h" />
+    <ClInclude Include="UIMaterialNodeProjectMat.h" />
+    <ClInclude Include="UIMaterialNodeRadian.h" />
+    <ClInclude Include="UIMaterialNodeReciprocal.h" />
+    <ClInclude Include="UIMaterialNodeReflect.h" />
+    <ClInclude Include="UIMaterialNodeRefract.h" />
+    <ClInclude Include="UIMaterialNodeFloor.h" />
+    <ClInclude Include="UIMaterialNodeRound.h" />
+    <ClInclude Include="UIMaterialNodeSampler2D.h" />
+    <ClInclude Include="UIMaterialNodeSaturate.h" />
+    <ClInclude Include="UIMaterialNodeSin.h" />
+    <ClInclude Include="UIMaterialNodeSqrt.h" />
+    <ClInclude Include="UIMaterialNodeSub.h" />
+    <ClInclude Include="UIMaterialNodeTan.h" />
+    <ClInclude Include="UIMaterialNodeTransofrm.h" />
+    <ClInclude Include="UIMaterialNodeViewMatrix.h" />
+    <ClInclude Include="UIMaterialNodeWorldMatrix.h" />
+    <ClInclude Include="UIMaterialNodeWorldViewMatrix.h" />
+    <ClInclude Include="UIMaterialNodeWorldViewProjMatrix.h" />
+    <ClInclude Include="UIMgr.h" />
+    <ClInclude Include="Ulit.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CodeNodeDlg.cpp" />
+    <ClCompile Include="D3D9DockWnd.cpp" />
+    <ClCompile Include="D3DView.cpp" />
+    <ClCompile Include="FloatLabelDlg.cpp" />
+    <ClCompile Include="HLSLLexer.cpp" />
+    <ClCompile Include="InoutputDlg.cpp" />
+    <ClCompile Include="LabelEditDlg.cpp" />
+    <ClCompile Include="LexState.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="PropertyDockWnd.cpp" />
+    <ClCompile Include="RenderSatateDlg.cpp" />
+    <ClCompile Include="ResourceMgrWnd.cpp" />
+    <ClCompile Include="SamplerTexDlg.cpp" />
+    <ClCompile Include="ShaderEditor.cpp" />
+    <ClCompile Include="ShaderEditorDoc.cpp" />
+    <ClCompile Include="ShaderEditorView.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ToolBoxWnd.cpp" />
+    <ClCompile Include="UI.cpp" />
+    <ClCompile Include="UIMgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
+    <None Include="ClassDiagram5.cd" />
+    <None Include="ClassDiagram6.cd" />
+    <None Include="res\ShaderEditor.rc2" />
+    <None Include="ShaderEditor.reg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ShaderEditor.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ShaderEditor.ico" />
+    <Image Include="res\ShaderEditorDoc.ico" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\Toolbar256.bmp" />
+    <Image Include="UserImages.bmp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="ShaderEditor.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

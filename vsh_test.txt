@@ -1,0 +1,22 @@
+
+
+struct VS_OUTPUT {
+float4 pos : POSITION;
+float2 tex : TEXCOORD0;
+};
+
+struct VS_INPUT {
+float4 pos : POSITION0;
+float2 tex : TEXCOORD0;
+};
+
+VS_OUTPUT VS_Main(VS_INPUT In)
+{
+VS_OUTPUT Out = (VS_OUTPUT)0;
+
+float4 clipPos = mul(In.pos,);
+Out.pos = clipPos;
+Out.tex = In.tex;
+
+return Out;
+}

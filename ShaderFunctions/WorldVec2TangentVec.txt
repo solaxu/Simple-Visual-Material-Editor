@@ -1,0 +1,17 @@
+float3 WorldVec2TangentVec(float4x4 worldMat, float4 pos, float3 direc)
+{
+	float3x3 worldToTangentSpace;
+	
+	float3 _tangent = float3(1.0f,0.0f,0.0f);
+	float3 _normal = float3(0.0f,0.0f,-1.0f);
+	
+	worldToTangentSpace[0] = mul(_tangent, worldMat);
+	worldToTangentSpace[1] = mul(cross(_tangent, _normal), worldMat);
+	worldToTangentSpace[2] = mul(_normal, worldMat);
+	
+	float3 posworld = normalize(mul(pos,worldMat));
+	
+	float3 light = normalize(direc) - posworld;
+	
+	return mul(light, worldToTangentSpace);
+}

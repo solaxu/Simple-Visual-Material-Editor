@@ -1,0 +1,20 @@
+float4 NormalSpecular(float4 nor, float4 col, float3 view, float3 light)
+{
+float fScaleDistance = 5.0f / length( light );
+
+float3 vNormalInTexture =  normalize( 2 * nor.xyz - 1.0 );
+
+float3 lightDir = normalize(light);
+
+float3 viewDir = normalize(view);
+
+float4 diff = saturate(dot(vNormalInTexture, lightDir));
+
+float selfShadow = saturate(4 * diff);
+
+float3 Reflect = normalize(2 * diff * vNormalInTexture - lightDir);
+
+float4 specular = min(pow(saturate(dot(Reflect, viewDir)), 15), col.a);
+
+return 0.5 * col + selfShadow * (col * diff + specular);
+}
